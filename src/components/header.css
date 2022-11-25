@@ -5,6 +5,11 @@
 @layer components {
   .header-buttons {
     @apply self-center pl-8 text-lg decoration-double text-white  hover:underline hover:underline-offset-8 hover:decoration-2;
+
+  }
+
+  .is-active {
+    @apply underline underline-offset-8
   }
 
   .search-icon {

@@ -5,10 +5,14 @@ import './header.css';
 import { Link } from 'react-router-dom';
 
 interface HeaderProps {
-  getMovies: (searchKey: string) => void;
+  getMoviesBySearchKey?: (searchKey: string) => void;
+  inFavoritePage: boolean;
 }
 
-export const Header: FC<HeaderProps> = ({ getMovies }) => {
+export const Header: FC<HeaderProps> = ({
+  getMoviesBySearchKey,
+  inFavoritePage,
+}) => {
   const [searchKey, setSearchkey] = useState('');
 
   return (
@@ -38,50 +42,55 @@ export const Header: FC<HeaderProps> = ({ getMovies }) => {
           </svg>
           <h1 className="text-white">Movies</h1>
         </div>
-        <Link to="/home" className="header-buttons">
+        <Link
+          to="/home"
+          className={
+            inFavoritePage ? 'header-buttons' : 'header-buttons is-active'
+          }
+        >
           HOME
         </Link>
-        <Link to="/favorites" className="header-buttons">
+        <Link
+          to="/favorites"
+          className={
+            !inFavoritePage ? 'header-buttons' : 'header-buttons is-active'
+          }
+        >
           FAVOURITES
         </Link>
       </div>
-      <div className="flex">
-        <div className="relative mx-auto w-max place-self-center">
-          <input
-            type="text"
-            name="search"
-            value={searchKey}
-            placeholder="movie name.."
-            className="peer relative z-10 h-12 w-12 cursor-pointer rounded-full border border-transparent bg-transparent pl-12 text-white outline-none duration-300 focus:w-full focus:cursor-text focus:border-white focus:pl-16 focus:pr-4"
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                // setSearchkey(e.target.value);
-                console.log("enterr")
-
-              }
-            }}
-            onChange={(e): void => {
-              setSearchkey(e.target.value);
-              getMovies(e.target.value);
-            }}
-          />
-
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="white"
-            className="search-icon"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+      {!inFavoritePage && (
+        <div className="flex">
+          <div className="relative mx-auto w-max place-self-center">
+            <input
+              type="text"
+              name="search"
+              value={searchKey}
+              placeholder="movie name.."
+              className="peer relative z-10 h-12 w-12 cursor-pointer rounded-full border border-transparent bg-transparent pl-12 text-white outline-none duration-300 focus:w-full focus:cursor-text focus:border-white focus:pl-16 focus:pr-4"
+              onChange={(e): void => {
+                setSearchkey(e.target.value);
+                if (getMoviesBySearchKey) getMoviesBySearchKey(e.target.value);
+              }}
             />
-          </svg>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="white"
+              className="search-icon"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+              />
+            </svg>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
