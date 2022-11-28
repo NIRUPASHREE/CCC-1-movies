@@ -39,7 +39,7 @@ export const Favorites: FC = () => {
 
       <div className=" mt-4 h-full w-full">
         {favoriteMovieData.length > 0 ? (
-          <div className="flex flex-row flex-wrap justify-around">
+          <div className="flex flex-row flex-wrap items-start">
             {favoriteMovieData.map(
               (movie: { id: number; poster_path: string }) => (
                 <div key={movie.id}>
