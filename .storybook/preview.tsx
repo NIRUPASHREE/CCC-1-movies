@@ -2,7 +2,6 @@ import 'tailwindcss/tailwind.css';
 import { Parameters } from '@storybook/addons';
 import { initialize, mswDecorator } from 'msw-storybook-addon';
 import type { DecoratorFn } from '@storybook/react';
-import React from 'react';
 
 // Start Mock Service Worker
 initialize({ onUnhandledRequest: 'bypass' });

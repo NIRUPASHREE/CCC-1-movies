@@ -1,13 +1,11 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import type { FC } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import React from 'react';
-import { Header } from './Header';
 import { MovieCard } from './MovieCard';
 import type { MovieDetails } from './HomePage';
 import { getMovieDetails } from 'src/services/apiCalls';
 import { MovieDetailsModal } from './MovieDetailsModal';
+import { Header } from './Header';
 
 export const Favorites: FC = () => {
   const [movieDetails, setMoviedetails] = useState<MovieDetails>();

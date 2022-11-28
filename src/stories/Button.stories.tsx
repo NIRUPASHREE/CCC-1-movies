@@ -1,5 +1,4 @@
-import React from 'react';
-
+/* eslint-disable functional/immutable-data */
 import { Button } from './Button';
 
 import type { ComponentStory, ComponentMeta } from '@storybook/react';

@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import { useEffect } from 'react';
-import React from 'react';
 import { useState } from 'react';
 import { Dialog, Switch } from '@headlessui/react';
 import type { MovieDetails } from './HomePage';

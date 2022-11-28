@@ -1,5 +1,4 @@
 import axios from 'axios';
-import type { FC } from 'react';
 import type { MovieData, MovieDetails } from 'src/components/HomePage';
 
 export const getMoviesBySearchKey = (

@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import React from 'react';
 import type { MovieData } from './HomePage';
 
 export const MovieCard: FC<MovieData> = ({

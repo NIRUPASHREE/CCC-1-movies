@@ -1,5 +1,4 @@
 import type { VFC } from 'react';
-import React from 'react';
 
 export const Loading: VFC = () => {
   return (

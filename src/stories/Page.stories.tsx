@@ -1,5 +1,4 @@
-import React from 'react';
-
+/* eslint-disable functional/immutable-data */
 import * as HeaderStories from './Header.stories';
 import { Page } from './Page';
 
