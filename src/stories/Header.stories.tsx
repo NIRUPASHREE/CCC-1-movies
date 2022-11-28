@@ -1,5 +1,4 @@
-import React from 'react';
-
+/* eslint-disable functional/immutable-data */
 import { Header } from './Header';
 
 import type { ComponentStory, ComponentMeta } from '@storybook/react';

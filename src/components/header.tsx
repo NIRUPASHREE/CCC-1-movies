@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 import { useState } from 'react';
-import React from 'react';
 import './header.css';
 import { Link } from 'react-router-dom';
+import { DebounceInput } from 'react-debounce-input';
 
 interface HeaderProps {
   getMoviesBySearchKey?: (searchKey: string) => void;
@@ -62,9 +62,10 @@ export const Header: FC<HeaderProps> = ({
       {!inFavoritePage && (
         <div className="flex">
           <div className="relative mx-auto w-max place-self-center">
-            <input
+            <DebounceInput
               type="text"
               name="search"
+              debounceTimeout={300}
               value={searchKey}
               placeholder="movie name.."
               className="peer relative z-10 h-12 w-12 cursor-pointer rounded-full border border-transparent bg-transparent pl-12 text-white outline-none duration-300 focus:w-full focus:cursor-text focus:border-white focus:pl-16 focus:pr-4"

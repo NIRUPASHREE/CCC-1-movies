@@ -1,14 +1,14 @@
 import axios from 'axios';
-import type { FC } from 'react';
 import type { MovieData, MovieDetails } from 'src/components/HomePage';
 
 export const getMoviesBySearchKey = (
   searchKey: string,
 ): Promise<MovieData[]> => {
-  //${process.env.REACT_APP_API_KEY}
   return axios
     .get(
-      `https://api.themoviedb.org/3/search/movie?api_key=8fa9a5d7460a3c602126d6abdf94f0a9&query=${searchKey}`,
+      `https://api.themoviedb.org/3/search/movie?api_key=${
+        import.meta.env.VITE_API_KEY
+      }&query=${searchKey}`,
     )
     .then((res) => {
       if (res.status === 200) {
@@ -26,7 +26,9 @@ export const getMoviesBySearchKey = (
 export const getMovieDetails = (movieId: number): Promise<MovieDetails> => {
   return axios
     .get(
-      `https://api.themoviedb.org/3/movie/${movieId}?api_key=8fa9a5d7460a3c602126d6abdf94f0a9`,
+      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${
+        import.meta.env.VITE_API_KEY
+      }`,
     )
     .then((res) => {
       if (res.status === 200) {
