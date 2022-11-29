@@ -2,10 +2,10 @@ import type { FC } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { getMovieDetails, getMoviesBySearchKey } from 'src/services/apiCalls';
-import { Header } from './Header';
-import { Loading } from './Loading';
-import { MovieCard } from './MovieCard';
-import { MovieDetailsModal } from './MovieDetailsModal';
+import { Header } from '../organisms/Header';
+import { Loading } from '../organisms/Loading';
+import { MovieCard } from '../morecules/MovieCard';
+import { MovieDetailsModal } from '../organisms/MovieDetailsModal';
 
 export interface MovieData {
   id: number;

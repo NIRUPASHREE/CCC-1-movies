@@ -1,6 +1,6 @@
-import { HomePage } from './components/HomePage';
+import { HomePage } from './components/pages/HomePage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Favorites } from './components/Favorites';
+import { Favorites } from './components/pages/Favorites';
 
 export const App: React.FC = () => {
   return (

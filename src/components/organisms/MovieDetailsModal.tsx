@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Dialog, Switch } from '@headlessui/react';
-import type { MovieDetails } from './HomePage';
+import type { MovieDetails } from '../pages/HomePage';
 
 export const MovieDetailsModal: FC<MovieDetails> = ({
   id,
@@ -52,7 +52,6 @@ export const MovieDetailsModal: FC<MovieDetails> = ({
       }}
       className="relative z-50 "
     >
-      {/* The backdrop, rendered as a fixed sibling to the panel container */}
       <div className="fixed inset-0 bg-black opacity-90" aria-hidden="true" />
       <div className="fixed inset-0 mt-8 flex min-h-max items-center justify-center p-8">
         <div className="flex flex-row">

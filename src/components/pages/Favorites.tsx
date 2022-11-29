@@ -2,11 +2,11 @@
 import type { FC } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { MovieCard } from './MovieCard';
+import { MovieCard } from '../morecules/MovieCard';
 import type { MovieDetails } from './HomePage';
 import { getMovieDetails } from 'src/services/apiCalls';
-import { MovieDetailsModal } from './MovieDetailsModal';
-import { Header } from './Header';
+import { MovieDetailsModal } from '../organisms/MovieDetailsModal';
+import { Header } from '../organisms/Header';
 
 export const Favorites: FC = () => {
   const [movieDetails, setMoviedetails] = useState<MovieDetails>();
