@@ -40,13 +40,16 @@ export const Header: FC<HeaderProps> = ({
               />
             </g>
           </svg>
-          <h1 className="text-white">Movies</h1>
+          <h1 className="text-white" data-testid="logo-title">
+            Movies
+          </h1>
         </div>
         <Link
           to="/home"
           className={
             inFavoritePage ? 'header-buttons' : 'header-buttons is-active'
           }
+          data-testid="link-home"
         >
           HOME
         </Link>
@@ -55,6 +58,7 @@ export const Header: FC<HeaderProps> = ({
           className={
             !inFavoritePage ? 'header-buttons' : 'header-buttons is-active'
           }
+          data-testid="link-favorites"
         >
           FAVOURITES
         </Link>
@@ -73,6 +77,7 @@ export const Header: FC<HeaderProps> = ({
                 setSearchkey(e.target.value);
                 if (getMoviesBySearchKey) getMoviesBySearchKey(e.target.value);
               }}
+              data-testid="search-bar"
             />
 
             <svg

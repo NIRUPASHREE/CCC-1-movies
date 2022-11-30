@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { getMovieDetails, getMoviesBySearchKey } from 'src/services/apiCalls';
 import { Header } from '../organisms/Header';
 import { Loading } from '../organisms/Loading';
 import { MovieCard } from '../morecules/MovieCard';
 import { MovieDetailsModal } from '../organisms/MovieDetailsModal';
+import { getMovieDetails, getMoviesBySearchKey } from 'src/services/apiCalls';
 
 export interface MovieData {
   id: number;
@@ -53,7 +53,11 @@ export const HomePage: FC = () => {
 
   return (
     <div>
-      <Header getMoviesBySearchKey={getMovies} inFavoritePage={false} />
+      <Header
+        getMoviesBySearchKey={getMovies}
+        inFavoritePage={false}
+        data-testid="header"
+      />
       <div className="mt-4 w-full">
         {loading ? (
           <div>
@@ -62,7 +66,10 @@ export const HomePage: FC = () => {
         ) : (
           <>
             {moviesData.length > 0 ? (
-              <div className="flex flex-row flex-wrap justify-around">
+              <div
+                className="flex flex-row flex-wrap justify-around"
+                data-testid="movie-card-display"
+              >
                 {moviesData.map((movie) => (
                   <div key={movie.id}>
                     <MovieCard
