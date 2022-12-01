@@ -16,7 +16,7 @@ export const Header: FC<HeaderProps> = ({
   const [searchKey, setSearchkey] = useState('');
 
   return (
-    <div className="flex flex-row justify-between ">
+    <div className="flex flex-row justify-between" data-testid="header">
       <div className="flex flex-row">
         <div className="ml-2">
           <svg
@@ -65,7 +65,7 @@ export const Header: FC<HeaderProps> = ({
       </div>
       {!inFavoritePage && (
         <div className="flex">
-          <div className="relative mx-auto w-max place-self-center">
+          <div className="relative mx-auto w-max place-self-center ">
             <DebounceInput
               type="text"
               name="search"

@@ -50,7 +50,8 @@ export const MovieDetailsModal: FC<MovieDetails> = ({
         setIsOpen(false);
         closeModal();
       }}
-      className="relative z-50 "
+      className="relative z-50"
+      data-testId="movi-deatils-modal"
     >
       <div className="fixed inset-0 bg-black opacity-90" aria-hidden="true" />
       <div className="fixed inset-0 mt-8 flex min-h-max items-center justify-center p-8">
@@ -68,6 +69,7 @@ export const MovieDetailsModal: FC<MovieDetails> = ({
                 {enabled ? 'Remove from favorites' : 'Add to favorites'}
               </div>
               <Switch
+                role="switch"
                 checked={enabled}
                 onChange={favoritesHandler}
                 className={`${
@@ -84,11 +86,17 @@ export const MovieDetailsModal: FC<MovieDetails> = ({
           </Dialog.Panel>
 
           <div className="flex flex-col p-4 text-white ">
-            <Dialog.Title className="flex items-center justify-center pt-4 text-2xl text-white">
+            <Dialog.Title
+              className="flex items-center justify-center pt-4 text-2xl text-white"
+              title="Title"
+            >
               {original_title}
             </Dialog.Title>
             <div className="pt-6 text-left">About the movie</div>
-            <Dialog.Description className="items-center justify-center pt-2  text-justify">
+            <Dialog.Description
+              className="items-center justify-center pt-2  text-justify"
+              title="Description"
+            >
               {overview}
             </Dialog.Description>
           </div>

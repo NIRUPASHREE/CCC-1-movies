@@ -2,7 +2,10 @@ import type { VFC } from 'react';
 
 export const Loading: VFC = () => {
   return (
-    <div className="z-10 flex h-screen items-center justify-center bg-black">
+    <div
+      className="z-10 flex h-screen items-center justify-center bg-black"
+      title="loading"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -10,6 +13,7 @@ export const Loading: VFC = () => {
         strokeWidth="1"
         stroke="white"
         className="h-12 w-12 animate-spin"
+        data-testid="loading-icon"
       >
         <path
           strokeLinecap="round"
