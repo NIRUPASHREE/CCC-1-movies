@@ -15,4 +15,4 @@ test('identify Home Page components', () => {
   expect(header).toBeInTheDocument();
 });
 
-//yet to do
+//yet to do mocking
