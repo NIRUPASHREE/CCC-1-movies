@@ -10,9 +10,9 @@ test('identify Home Page components', () => {
   render(<HomePage />, { wrapper: BrowserRouter });
   const homePage = screen.getByTestId('home-page');
   expect(homePage).toBeInTheDocument();
+  
   userEvent.click(screen.getByTestId('link-home'));
   const header = screen.getByTestId('header');
   expect(header).toBeInTheDocument();
-});
 
-//yet to do mocking
+});
