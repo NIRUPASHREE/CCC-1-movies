@@ -1,6 +1,6 @@
-import type { VFC } from 'react';
+import type { FC } from 'react';
 
-export const Loading: VFC = () => {
+export const Loading: FC = () => {
   return (
     <div
       className="z-10 flex h-screen items-center justify-center bg-black"

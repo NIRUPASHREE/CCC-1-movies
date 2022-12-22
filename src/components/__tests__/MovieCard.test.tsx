@@ -11,7 +11,7 @@ it('identify movie card', () => {
   const poster_path =
     'https://www.themoviedb.org/t/p/w440_and_h660_face/nKhhDFCdzxeJ3GUunQ570LDpUkz.jpg';
   const func = (): void => {
-    console.log('fun');
+    // console.log('fun');
   };
 
   render(<MovieCard poster_path={poster_path} onClickHandler={func} id={0} />, {

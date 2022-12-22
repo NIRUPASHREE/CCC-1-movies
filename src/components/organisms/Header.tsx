@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import { useState } from 'react';
 import './header.css';
 import { DebounceInput } from 'react-debounce-input';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 interface HeaderProps {
   getMoviesBySearchKey?: (searchKey: string) => void;
@@ -17,7 +17,6 @@ export const Header: FC<HeaderProps> = ({
 }) => {
   const [searchKey, setSearchkey] = useState('');
   const navigate = useNavigate();
-  const location = useLocation();
 
   return (
     <div className="flex flex-row justify-between" data-testid="header">
@@ -75,7 +74,7 @@ export const Header: FC<HeaderProps> = ({
           data-testid="link-favorites"
           onClick={(): void => navigate('/favorites')}
         >
-          FAVORITE
+          FAVOURITES
         </div>
       </div>
       {!inFavoritePage && (

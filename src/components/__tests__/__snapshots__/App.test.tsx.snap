@@ -52,20 +52,18 @@ exports[`Simple working test > renders correctly 1`] = `
                   Movies
                 </h1>
               </div>
-              <a
+              <div
                 class="header-buttons is-active"
                 data-testid="link-home"
-                href="/home"
               >
                 HOME
-              </a>
-              <a
+              </div>
+              <div
                 class="header-buttons"
                 data-testid="link-favorites"
-                href="/favorites"
               >
                 FAVOURITES
-              </a>
+              </div>
             </div>
             <div
               class="flex"
@@ -176,20 +174,18 @@ exports[`Simple working test > renders correctly 1`] = `
                 Movies
               </h1>
             </div>
-            <a
+            <div
               class="header-buttons is-active"
               data-testid="link-home"
-              href="/home"
             >
               HOME
-            </a>
-            <a
+            </div>
+            <div
               class="header-buttons"
               data-testid="link-favorites"
-              href="/favorites"
             >
               FAVOURITES
-            </a>
+            </div>
           </div>
           <div
             class="flex"
