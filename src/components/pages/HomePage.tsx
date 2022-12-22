@@ -53,10 +53,7 @@ export const HomePage: FC = () => {
 
   return (
     <div data-testid="home-page">
-      <Header
-        getMoviesBySearchKey={getMovies}
-        inFavoritePage={false}
-      />
+      <Header getMoviesBySearchKey={getMovies} inFavoritePage={false} />
       <div className="mt-4 w-full">
         {loading ? (
           <div>

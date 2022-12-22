@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import type { FC } from 'react';
 import { useState } from 'react';
 import './header.css';
-import { Link } from 'react-router-dom';
 import { DebounceInput } from 'react-debounce-input';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 interface HeaderProps {
   getMoviesBySearchKey?: (searchKey: string) => void;
@@ -14,6 +16,8 @@ export const Header: FC<HeaderProps> = ({
   inFavoritePage,
 }) => {
   const [searchKey, setSearchkey] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <div className="flex flex-row justify-between" data-testid="header">
@@ -44,24 +48,35 @@ export const Header: FC<HeaderProps> = ({
             Movies
           </h1>
         </div>
-        <Link
-          to="/home"
+        <div
           className={
             inFavoritePage ? 'header-buttons' : 'header-buttons is-active'
           }
           data-testid="link-home"
+          onClick={(): void => {
+            if (location.pathname === '/home') {
+              if (getMoviesBySearchKey) getMoviesBySearchKey('friends');
+              setSearchkey('');
+            } else {
+              navigate('/home', {
+                state: {
+                  default: 'friends',
+                },
+              });
+            }
+          }}
         >
           HOME
-        </Link>
-        <Link
-          to="/favorites"
+        </div>
+        <div
           className={
             !inFavoritePage ? 'header-buttons' : 'header-buttons is-active'
           }
           data-testid="link-favorites"
+          onClick={(): void => navigate('/favorites')}
         >
-          FAVOURITES
-        </Link>
+          FAVORITE
+        </div>
       </div>
       {!inFavoritePage && (
         <div className="flex">
