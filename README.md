@@ -1,3 +1,8 @@
+# This is a Movie Search Application
+
+<img width="1440" alt="Screenshot 2023-01-05 at 11 28 42 AM" src="https://user-images.githubusercontent.com/51870577/210689829-13a97269-5868-4cd2-ba3f-cd2ad149b7c0.png">
+
+
 # React Tailwindcss Storybook Boilerplate build with Vite
 
 This is a [ReactJS](https://reactjs.org) + [Vite](https://vitejs.dev) boilerplate to be used with [Tailwindcss](https://tailwindcss.com) and [Storybook](https://storybook.js.org/).
